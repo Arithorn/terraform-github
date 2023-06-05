@@ -13,7 +13,8 @@ resource "github_repository" "tf-modules" {
 }
 
 resource "github_actions_secret" "infracost" {
-  repository       = github_repository.tf-modules[*].full_name
+  for_each = local.module_settings
+  repository       = each.key
   secret_name      = "INFRACOST_API_KEY"
   plaintext_value  = var.infracost_key
 }
