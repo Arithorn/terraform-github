@@ -1,6 +1,7 @@
-resource "github_repository" "tf-module-1" {
-  name        = "terraform-module-1"
-  description = "My Private Terraform Module"
+resource "github_repository" "tf-modules" {
+  for_each      = local.module_settings
+  name        = each.key
+  description = each.value.description
   visibility = "private"
   auto_init = true
 
