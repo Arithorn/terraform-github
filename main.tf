@@ -2,6 +2,7 @@ resource "github_repository" "tf-module-1" {
   name        = "terraform-module-1"
   description = "My Private Terraform Module"
   visibility = "private"
+  auto_init = true
 
   template {
     owner                = "Arithorn"
