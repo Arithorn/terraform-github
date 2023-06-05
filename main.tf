@@ -12,3 +12,8 @@ resource "github_repository" "tf-modules" {
   }
 }
 
+resource "github_actions_secret" "infracost" {
+  repository       = github_repository.tf-modules[*]
+  secret_name      = "INFRACOST_API_KEY"
+  plaintext_value  = var.infracost_key
+}
