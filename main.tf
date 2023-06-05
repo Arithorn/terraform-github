@@ -1,12 +1,11 @@
-resource "github_repository" "example" {
-  name        = "example"
-  description = "My awesome codebase"
-
-  visibility = "public"
+resource "github_repository" "tf-module-1" {
+  name        = "terraform-module-1"
+  description = "My Private Terraform Module"
+  visibility = "private"
 
   template {
-    owner                = "github"
-    repository           = "terraform-template-module"
+    owner                = "Arithorn"
+    repository           = "terraform-aws-template-master"
     include_all_branches = true
   }
 }
