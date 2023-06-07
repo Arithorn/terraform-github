@@ -7,6 +7,11 @@ variable "infracost_key" {
   default = "123456789"
 }
 
+variable "module-template" {
+  type = string
+  default = "terraform-aws-template-master"
+}
+
 locals {
   module_settings = {
     "module_1" = {name = "Module1", description="Custom Module 1"},
