@@ -1,3 +1,3 @@
 data "github_app" "TerraformCloud" {
-  slug = "Terraform Cloud"
+  slug = "TerraformCloud"
 }
