@@ -28,5 +28,5 @@ resource "github_actions_secret" "infracost" {
 }
 
 output "repos" {
-  value = github_repository.tf-modules[*].name
+  value = github_repository.tf-modules[*].full_name
 }
