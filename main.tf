@@ -12,12 +12,12 @@ resource "github_repository" "tf-modules" {
   }
 }
 
-resource "github_app_installation_repository" "TerraformCloud" {
-  # The installation id of the app (in the organization).
-  for_each = local.module_settings
-  installation_id    = "34238006"
-  repository         = github_repository.tf-modules[each.key].full_name
-}
+# resource "github_app_installation_repository" "TerraformCloud" {
+#   # The installation id of the app (in the organization).
+#   for_each = local.module_settings
+#   installation_id    = data.github_app.TerraformCloud
+#   repository         = github_repository.tf-modules[each.key].full_name
+# }
 
 
 resource "github_actions_secret" "infracost" {
@@ -27,3 +27,6 @@ resource "github_actions_secret" "infracost" {
   plaintext_value  = var.infracost_key
 }
 
+output "AppID" {
+  value = data.github_app.TerraformCloud
+}
