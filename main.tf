@@ -28,6 +28,5 @@ resource "github_actions_secret" "infracost" {
 }
 
 output "repos" {
-  for_each = local.module_settings
-  value = "${github_repository.tf-modules.each.key}"
+  value = "${github_repository.tf-modules[*].name}"
 }
