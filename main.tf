@@ -27,6 +27,3 @@ resource "github_actions_secret" "infracost" {
   plaintext_value  = var.infracost_key
 }
 
-output "repos" {
-  value = github_repository.tf-modules[*].full_name
-}
