@@ -16,7 +16,7 @@ resource "github_app_installation_repository" "TerraformCloud" {
   # The installation id of the app (in the organization).
   for_each = local.module_settings
   installation_id    = "34238006"
-  repository         = "${github_repository.tf-modules.each.key}"
+  repository         = "${github_repository.tf-modules[each.key]}"
 }
 
 
